@@ -64,7 +64,9 @@ namespace rentPrac1.windows.Property
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            type.Name = nameinput.Text;
+            context.SaveChanges();
+            this.Close();
         }
     }
 }

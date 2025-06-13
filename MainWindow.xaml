@@ -9,7 +9,7 @@
     <Grid>
         <Button Content="Управление клиентами" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" Width="310" Height="60" Click="Button_Click"/>
         <Button Content="Управление недвижимостью" HorizontalAlignment="Center" VerticalAlignment="Top" Width="310" Height="60" Margin="0,150,0,0" Click="Button_Click_1"/>
-        <Button Content="Управление контрактами" HorizontalAlignment="Center" Margin="0,268,0,0" VerticalAlignment="Top" Width="310" Height="60"/>
+        <Button Content="Управление контрактами" HorizontalAlignment="Center" Margin="0,268,0,0" VerticalAlignment="Top" Width="310" Height="60" Click="Button_Click_2"/>
 
     </Grid>
 </Window>

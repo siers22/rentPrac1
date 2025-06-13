@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="MainContractsWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,76,0,0"/>
+        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,76,0,0" SelectionChanged="dataList_SelectionChanged" MouseEnter="dataList_MouseEnter"/>
+        <Button Content="Добавить контракт" HorizontalAlignment="Left" Margin="24,27,0,0" VerticalAlignment="Top" Width="131" Click="Button_Click"/>
+        <Button Content="Выход" HorizontalAlignment="Left" Margin="698,32,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
 
     </Grid>
 </Window>

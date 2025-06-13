@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using rentPrac1.DataAccess;
+using rentPrac1.windows.Property;
 
 namespace rentPrac1.windows.Contracts
 {
@@ -24,6 +25,34 @@ namespace rentPrac1.windows.Contracts
         public MainContractsWindow()
         {
             InitializeComponent();
+            dataList.ItemsSource = context.Contracts.ToList();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var window1 = new AddContractWindow();
+            window1.Show();
+
+        }
+
+        private void dataList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            var contract = dataList.SelectedItem as Models.Contract;
+            if (contract != null)
+            {
+                var window2 = new EditContractWindow(context, contract);
+                window2.Show();
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dataList_MouseEnter(object sender, MouseEventArgs e)
+        {
             dataList.ItemsSource = context.Contracts.ToList();
         }
     }

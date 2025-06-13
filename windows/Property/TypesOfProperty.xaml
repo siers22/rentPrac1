@@ -9,6 +9,7 @@
     <Grid>
         <DataGrid x:Name="datalist" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,115,0,0" SelectionChanged="datalist_SelectionChanged" MouseEnter="datalist_MouseEnter"/>
         <Button Content="Добавить тип недвижимости" HorizontalAlignment="Left" Margin="24,45,0,0" VerticalAlignment="Top" Width="190" Click="Button_Click"/>
+        <Button Content="Выход" HorizontalAlignment="Left" Margin="675,45,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
 
     </Grid>
 </Window>

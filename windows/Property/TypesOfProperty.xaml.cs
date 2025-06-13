@@ -55,5 +55,10 @@ namespace rentPrac1.windows.Property
         {
             datalist.ItemsSource = context.PropertyTypes.ToList();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
