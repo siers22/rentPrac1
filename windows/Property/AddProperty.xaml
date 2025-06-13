@@ -14,7 +14,7 @@
         <Label Content="Адрес" HorizontalAlignment="Left" Margin="18,74,0,0" VerticalAlignment="Top" FontSize="24"/>
         <TextBox x:Name="addresInput" HorizontalAlignment="Left" Margin="169,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
         <Label Content="Цена за месяц" HorizontalAlignment="Left" Margin="18,128,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="priceInput" HorizontalAlignment="Left" Margin="169,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
+        <TextBox x:Name="priceInput" HorizontalAlignment="Left" Margin="169,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204" PreviewTextInput="priceInput_PreviewTextInput"/>
         <ComboBox x:Name="typesInput" HorizontalAlignment="Left" Margin="169,186,0,0" VerticalAlignment="Top" Width="204" SelectedValuePath="Id" DisplayMemberPath="Name"/>
         <Label Content="Тип недвижимости" HorizontalAlignment="Left" Margin="18,181,0,0" VerticalAlignment="Top" FontSize="15"/>
 

@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="MainPropertyWindow" Height="450" Width="800" MouseEnter="Window_MouseEnter">
     <Grid>
-        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,108,0,10"/>
+        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,108,0,10" SelectionChanged="dataList_SelectionChanged"/>
         <Button Content="Добавить недвижимость" HorizontalAlignment="Left" Margin="20,45,0,0" VerticalAlignment="Top" Width="157" Click="Button_Click"/>
+        <Button Content="Выход" HorizontalAlignment="Left" Margin="649,35,0,0" VerticalAlignment="Top" Width="95" Click="Button_Click_1"/>
 
     </Grid>
 </Window>
