@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using rentPrac1.DataAccess;
 namespace rentPrac1.windows.Clients
 {
     /// <summary>
@@ -19,9 +19,18 @@ namespace rentPrac1.windows.Clients
     /// </summary>
     public partial class MainClientsWindow : Window
     {
+        private readonly AppDbContext context = new AppDbContext();
         public MainClientsWindow()
         {
             InitializeComponent();
+            dataList.ItemsSource = context.Clients.ToList();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var window1 = new MainWindow();
+            window1.Show();
+            this.Close();
         }
     }
 }
