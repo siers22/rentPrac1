@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using rentPrac1.windows.Clients;
+using rentPrac1.windows.Property;
 
 namespace rentPrac1
 {
@@ -26,6 +27,13 @@ namespace rentPrac1
         {
             var window = new MainClientsWindow();
             window.Show();
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var window1 = new MainPropertyWindow();
+            window1.Show();
             this.Close();
         }
     }
