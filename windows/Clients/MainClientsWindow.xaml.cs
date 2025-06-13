@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using rentPrac1.DataAccess;
+using rentPrac1.Models;
 namespace rentPrac1.windows.Clients
 {
     /// <summary>
@@ -31,6 +32,32 @@ namespace rentPrac1.windows.Clients
             var window1 = new MainWindow();
             window1.Show();
             this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var window2 = new AddClient();
+            window2.Show();
+            
+        }
+
+        private void Window_MouseEnter(object sender, MouseEventArgs e)
+        {
+            dataList.ItemsSource = context.Clients.ToList();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+           var window3 = new DeleteClient();
+            window3.Show();
+        }
+
+        private void dataList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var client = dataList.SelectedItem as Client;
+            var window4 = new EditClient(context, client);
+            window4.Show();
+
         }
     }
 }

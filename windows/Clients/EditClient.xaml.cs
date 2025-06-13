@@ -17,14 +17,19 @@ using rentPrac1.Models;
 namespace rentPrac1.windows.Clients
 {
     /// <summary>
-    /// Логика взаимодействия для AddClient.xaml
+    /// Логика взаимодействия для EditClient.xaml
     /// </summary>
-    public partial class AddClient : Window
+    public partial class EditClient : Window
     {
-        private readonly AppDbContext context = new AppDbContext();
-        public AddClient()
+        private readonly AppDbContext context;
+        private readonly Client client;
+
+        public EditClient(AppDbContext context, Client client)
         {
             InitializeComponent();
+            this.context = context;
+            this.client = client;
+            nameinput.Text = client.Name;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -34,8 +39,7 @@ namespace rentPrac1.windows.Clients
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var newClient = new Client { Name = nameInput.Text };
-            context.Clients.Add(newClient);
+            client.Name = nameinput.Text;
             context.SaveChanges();
             this.Close();
         }

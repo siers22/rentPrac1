@@ -5,10 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rentPrac1.windows.Clients"
         mc:Ignorable="d"
-        Title="MainClientsWindow" Height="450" Width="800">
+        Title="MainClientsWindow" Height="450" Width="800" MouseEnter="Window_MouseEnter">
     <Grid>
-        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,90,0,0"/>
+        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,90,0,0" SelectionChanged="dataList_SelectionChanged"/>
         <Button Content="Выход" HorizontalAlignment="Left" Margin="685,33,0,0" VerticalAlignment="Top" Width="81" Click="Button_Click"/>
+        <Button Content="Добавить клиента" HorizontalAlignment="Left" Margin="22,33,0,0" VerticalAlignment="Top" Width="121" Click="Button_Click_1"/>
+        <Button Content="Удалить клиента" HorizontalAlignment="Left" Margin="200,33,0,0" VerticalAlignment="Top" Width="106" Click="Button_Click_2"/>
 
     </Grid>
 </Window>
