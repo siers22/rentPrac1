@@ -61,5 +61,12 @@ namespace rentPrac1.windows.Property
         {
             dataList.ItemsSource = context.Properties.ToList();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var window2 = new TypesOfProperty();
+            window2.Show();
+
+        }
     }
 }

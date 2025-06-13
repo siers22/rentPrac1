@@ -43,5 +43,23 @@ namespace rentPrac1.windows.Clients
             context.SaveChanges();
             this.Close();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var cl = client;
+            if (cl != null)
+            {
+                var clhist = context.Contracts.Where(c => c.ClientId == cl.Id).FirstOrDefault();
+                if (clhist != null)
+                {
+                    context.Contracts.Remove(clhist);
+                    context.SaveChanges();
+                }
+                context.Remove(cl);
+                context.SaveChanges();
+
+                this.Close();
+            }
+        }
     }
 }

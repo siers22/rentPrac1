@@ -46,18 +46,17 @@ namespace rentPrac1.windows.Clients
             dataList.ItemsSource = context.Clients.ToList();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-           var window3 = new DeleteClient();
-            window3.Show();
-        }
+        
 
         private void dataList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var client = dataList.SelectedItem as Client;
-            var window4 = new EditClient(context, client);
-            window4.Show();
+            if (client != null)
+            {
 
+                var window4 = new EditClient(context, client);
+                window4.Show();
+            }
         }
     }
 }

@@ -1,18 +1,18 @@
-﻿<Window x:Class="rentPrac1.windows.Clients.EditClient"
+﻿<Window x:Class="rentPrac1.windows.Property.EditTypesOfProperty"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:rentPrac1.windows.Clients"
+        xmlns:local="clr-namespace:rentPrac1.windows.Property"
         mc:Ignorable="d"
-        Title="EditClient" Height="350" Width="630">
+        Title="EditTypesOfProperty" Height="350" Width="600">
     <Grid>
         <Label Content="Name" HorizontalAlignment="Left" Margin="39,42,0,0" VerticalAlignment="Top" FontSize="24"/>
         <TextBox x:Name="nameinput" HorizontalAlignment="Left" Margin="160,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="384" Height="40"/>
         <Button Content="Сохранить" HorizontalAlignment="Left" Margin="39,173,0,0" VerticalAlignment="Top" Height="44" Width="156" Click="Button_Click_1"/>
         <Button Content="Отмена" HorizontalAlignment="Left" Margin="429,173,0,0" VerticalAlignment="Top" Height="44" Width="133" Click="Button_Click"/>
         <Button Content="Удалить
-" HorizontalAlignment="Center" Margin="0,173,0,0" VerticalAlignment="Top" Width="152" Height="44" Click="Button_Click_2"/>
+" HorizontalAlignment="Left" Margin="239,173,0,0" VerticalAlignment="Top" Width="152" Height="44" Click="Button_Click_2"/>
 
     </Grid>
 </Window>
