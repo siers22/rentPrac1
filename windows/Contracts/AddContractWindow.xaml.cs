@@ -44,18 +44,21 @@ namespace rentPrac1.windows.Contracts
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            System.DateTime today = System.DateTime.Now;
-            System.TimeSpan duration = new System.TimeSpan();
-            System.DateTime answer = today.Add(duration);
-            System.Console.WriteLine("{0:dddd}", answer);
-            var newCotract = new Models.Contract { ClientId = (int)clientCB.SelectedValue,
-                PropertyId = (int)propCB.SelectedValue,
-                ContractStartDate = DateTime.Now.ToString().Remove(11), 
-                ContractEndDate = DateTime.Now.AddMonths(Convert.ToInt32(renttimeinput.Text)).ToString().Remove(11),
-                RentTime = Convert.ToInt32(renttimeinput.Text)};
-            context.Add(newCotract);
-            context.SaveChanges();
-            this.Close();
+            if (!string.IsNullOrEmpty(renttimeinput.Text))
+            {
+                var newCotract = new Models.Contract { ClientId = (int)clientCB.SelectedValue,
+                    PropertyId = (int)propCB.SelectedValue,
+                    ContractStartDate = DateTime.Now.ToString().Remove(11), 
+                    ContractEndDate = DateTime.Now.AddMonths(Convert.ToInt32(renttimeinput.Text)).ToString().Remove(11),
+                    RentTime = Convert.ToInt32(renttimeinput.Text)};
+                context.Add(newCotract);
+                context.SaveChanges();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Укажите время аренды");
+            }
         }
 
         private void renttimeinput_PreviewTextInput(object sender, TextCompositionEventArgs e)

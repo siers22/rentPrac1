@@ -59,6 +59,10 @@ namespace rentPrac1.windows.Contracts
                 {
                     var window2 = new EditContractWindow(context, contract1);
                     window2.Show();
+                    window2.Closed += (f, d) =>
+                    {
+                        FillGrid();
+                    };
                 }
             }
   
@@ -114,5 +118,7 @@ namespace rentPrac1.windows.Contracts
             propertyNameInput.Clear();
             FillGrid();
         }
+
+       
     }
 }
