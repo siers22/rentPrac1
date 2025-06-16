@@ -5,12 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rentPrac1.windows.Property"
         mc:Ignorable="d"
-        Title="MainPropertyWindow" Height="450" Width="800" MouseEnter="Window_MouseEnter">
+        Title="MainPropertyWindow" Height="550" Width="800" MouseEnter="Window_MouseEnter">
     <Grid>
-        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,108,0,10" SelectionChanged="dataList_SelectionChanged"/>
-        <Button Content="Добавить недвижимость" HorizontalAlignment="Left" Margin="20,45,0,0" VerticalAlignment="Top" Width="157" Click="Button_Click"/>
+        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,184,0,10" SelectionChanged="dataList_SelectionChanged" AutoGeneratingColumn="OnAutoGeneratingColumn"/>
+        <Button Content="Добавить недвижимость" HorizontalAlignment="Left" Margin="20,37,0,0" VerticalAlignment="Top" Width="157" Click="Button_Click"/>
         <Button Content="Выход" HorizontalAlignment="Left" Margin="649,35,0,0" VerticalAlignment="Top" Width="95" Click="Button_Click_1"/>
-        <Button Content="Типы недвижимости" HorizontalAlignment="Left" Margin="227,45,0,0" VerticalAlignment="Top" Width="147" Click="Button_Click_2"/>
+        <Button Content="Типы недвижимости" HorizontalAlignment="Left" Margin="193,36,0,0" VerticalAlignment="Top" Width="147" Click="Button_Click_2"/>
+        <TextBox x:Name="propNameInput" HorizontalAlignment="Left" Margin="183,88,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Название недвижимости" HorizontalAlignment="Left" Margin="20,80,0,0" VerticalAlignment="Top"/>
+        <Label Content="Тип недвижимости" HorizontalAlignment="Left" Margin="20,111,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="propTypeCB" HorizontalAlignment="Left" Margin="183,115,0,0" VerticalAlignment="Top" Width="120" SelectedValuePath="Id" DisplayMemberPath="Name"/>
+        <Label Content="Адрес" HorizontalAlignment="Left" Margin="362,84,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="addressInput" HorizontalAlignment="Left" Margin="437,88,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="searchButton" Content="Поиск" HorizontalAlignment="Left" Margin="360,117,0,0" VerticalAlignment="Top" Click="searchButton_Click"/>
 
     </Grid>
 </Window>

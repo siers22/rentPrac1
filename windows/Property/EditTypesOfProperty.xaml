@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rentPrac1.windows.Property"
         mc:Ignorable="d"
-        Title="EditTypesOfProperty" Height="350" Width="600">
+        Title="EditTypesOfProperty" Height="350" Width="600" KeyDown="Window_KeyDown">
     <Grid>
         <Label Content="Name" HorizontalAlignment="Left" Margin="39,42,0,0" VerticalAlignment="Top" FontSize="24"/>
         <TextBox x:Name="nameinput" HorizontalAlignment="Left" Margin="160,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="384" Height="40"/>

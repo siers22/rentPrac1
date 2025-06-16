@@ -5,12 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rentPrac1.windows.Clients"
         mc:Ignorable="d"
-        Title="AddClient" Height="200" Width="350">
+        Title="AddClient" Height="200" Width="350" KeyDown="Window_KeyDown">
     <Grid>
-        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="21,140,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_1"/>
-        <Button Content="Отмена" HorizontalAlignment="Left" Margin="196,140,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <Button Content="Отмена" HorizontalAlignment="Left" Margin="76,105,0,0" VerticalAlignment="Top" Width="176" Click="Button_Click"/>
         <Label Content="Имя" HorizontalAlignment="Left" Margin="22,27,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="nameInput" HorizontalAlignment="Left" Margin="76,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="205"/>
+        <TextBox x:Name="nameInput" HorizontalAlignment="Left" Margin="76,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="205" KeyDown="nameInput_KeyDown"/>
 
     </Grid>
 </Window>

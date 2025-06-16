@@ -7,9 +7,11 @@
         mc:Ignorable="d"
         Title="MainClientsWindow" Height="450" Width="800" MouseEnter="Window_MouseEnter">
     <Grid>
-        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,90,0,0" SelectionChanged="dataList_SelectionChanged"/>
-        <Button Content="Выход" HorizontalAlignment="Left" Margin="685,33,0,0" VerticalAlignment="Top" Width="81" Click="Button_Click"/>
+        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,90,0,0" SelectionChanged="dataList_SelectionChanged" AutoGeneratingColumn="OnAutoGeneratingColumn"/>
+        <Button Content="Выход" HorizontalAlignment="Left" Margin="631,33,0,0" VerticalAlignment="Top" Width="135" Click="Button_Click"/>
         <Button Content="Добавить клиента" HorizontalAlignment="Left" Margin="22,33,0,0" VerticalAlignment="Top" Width="121" Click="Button_Click_1"/>
+        <Label Content="Имя:" HorizontalAlignment="Left" Margin="178,33,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="nameinput" HorizontalAlignment="Left" Margin="219,37,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="nameinput_PreviewTextInput"/>
 
     </Grid>
 </Window>

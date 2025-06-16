@@ -34,10 +34,26 @@ namespace rentPrac1.windows.Clients
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var newClient = new Client { Name = nameInput.Text };
-            context.Clients.Add(newClient);
-            context.SaveChanges();
-            this.Close();
+        }
+
+        private void nameInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                var newClient = new Client { Name = nameInput.Text };
+                context.Clients.Add(newClient);
+                context.SaveChanges();
+                this.Close();
+                
+            }
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }

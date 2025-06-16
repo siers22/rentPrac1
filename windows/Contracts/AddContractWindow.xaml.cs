@@ -38,9 +38,9 @@ namespace rentPrac1.windows.Contracts
         {
             var newCotract = new Models.Contract { ClientId = Convert.ToInt32(clientInput.Text),
                 PropertyId = Convert.ToInt32(propertyinput.Text),
-                ContractStartDate = Convert.ToString(DateTime.Today),
-                ContractEndDate = Convert.ToString(rentEndPicker.SelectedDate),
-                RentTime = Convert.ToInt32(renttimeinput.Text)};
+                ContractStartDate = DateTime.Now.ToString().Replace("0:00:00", ""),
+                ContractEndDate = Convert.ToString(rentEndPicker.SelectedDate).Replace("0:00:00", ""),
+                RentTime = Convert.ToInt32(renttimeinput.Text) };
             context.Add(newCotract);
             context.SaveChanges();
             this.Close();

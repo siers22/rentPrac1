@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
 using rentPrac1.DataAccess;
+using rentPrac1.Models;
 using rentPrac1.windows.Property;
 
 namespace rentPrac1.windows.Contracts
@@ -27,6 +30,7 @@ namespace rentPrac1.windows.Contracts
             InitializeComponent();
             dataList.ItemsSource = context.Contracts.ToList();
         }
+        
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -54,6 +58,19 @@ namespace rentPrac1.windows.Contracts
         private void dataList_MouseEnter(object sender, MouseEventArgs e)
         {
             dataList.ItemsSource = context.Contracts.ToList();
+        }
+        private void OnAutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            PropertyDescriptor propertyDescriptor = (PropertyDescriptor)e.PropertyDescriptor;
+            e.Column.Header = propertyDescriptor.DisplayName;
+            if (propertyDescriptor.DisplayName == "Client")
+            {
+                e.Cancel = true;
+            }
+            if (propertyDescriptor.DisplayName == "Property")
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

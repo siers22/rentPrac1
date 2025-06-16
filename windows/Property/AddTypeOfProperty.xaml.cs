@@ -32,12 +32,23 @@ namespace rentPrac1.windows.Property
             this.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+       
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                this.Close();
+            }
+        }
+
+        private void nameInput_KeyDown(object sender, KeyEventArgs e)
         {
             var newtype = new PropertyType { Name = nameInput.Text };
             context.PropertyTypes.Add(newtype);
             context.SaveChanges();
             this.Close();
+
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rentPrac1.windows.Contracts"
         mc:Ignorable="d"
-        Title="EditContractWindow" Height="450" Width="800">
+        Title="EditContractWindow" Height="450" Width="800" KeyDown="Window_KeyDown">
     <Grid>
         <Label Content="Client ID" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" FontSize="22"/>
         <TextBox x:Name="clientInput" HorizontalAlignment="Left" Margin="157,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
