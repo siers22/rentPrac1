@@ -28,9 +28,16 @@ namespace rentPrac1.windows.Contracts
         public MainContractsWindow()
         {
             InitializeComponent();
-            dataList.ItemsSource = context.Contracts.ToList();
+            FillGrid();
         }
-        
+        private void FillGrid()
+        {
+            dataList.ItemsSource = context.Contracts
+                .Include(x => x.Client)
+                .Include(x => x.Property)
+                .Select(x => new ContractDto(x.Id, x.Client.Name, x.Property.Name, x.ContractStartDate, x.ContractEndDate, x.RentTime))
+                .ToList();
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -55,10 +62,7 @@ namespace rentPrac1.windows.Contracts
             this.Close();
         }
 
-        private void dataList_MouseEnter(object sender, MouseEventArgs e)
-        {
-            dataList.ItemsSource = context.Contracts.ToList();
-        }
+       
         private void OnAutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
             PropertyDescriptor propertyDescriptor = (PropertyDescriptor)e.PropertyDescriptor;
@@ -71,6 +75,30 @@ namespace rentPrac1.windows.Contracts
             {
                 e.Cancel = true;
             }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var query = context.Contracts
+                .Include(x => x.Client)
+                .Include(x => x.Property)
+                .Select(x => new ContractDto(x.Id, x.Client.Name, x.Property.Name, x.ContractStartDate, x.ContractEndDate, x.RentTime))
+                .ToList()
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(clientNameInput.Text))
+            {
+                query = query.Where(b => b.ClientName.Contains(clientNameInput.Text));
+            }
+            if (!string.IsNullOrEmpty(propertyNameInput.Text))
+            {
+                query = query.Where(b => b.PropertyName.Contains(propertyNameInput.Text));
+            }
+            
+
+            var result = query.ToList();
+
+            dataList.ItemsSource = result;
         }
     }
 }

@@ -103,25 +103,36 @@ namespace rentPrac1.windows.Property
 
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
-            var query = context.Properties.AsQueryable();
+            var query = context.Properties
+                .Include(x => x.Type)
+                .Select(x => new PropertyDto(x.Id, x.Name, x.Type.Name, x.Address, x.Price))
+                .ToList()
+                .AsQueryable();
 
             if (!string.IsNullOrEmpty(propNameInput.Text))
             {
-                query = query.Where(b => b.Name.Contains(propNameInput.Text));
+                query = query.Where(b => b.Nmae.Contains(propNameInput.Text));
             }
             if (!string.IsNullOrEmpty(addressInput.Text))
             {
-                query = query.Where(b => b.Address.Contains(addressInput.Text));
+                query = query.Where(b => b.address.Contains(addressInput.Text));
             }
             if(propTypeCB.SelectedItem != null)
             {
-                query = query.Where(c => c.TypeId == (int)propTypeCB.SelectedValue);
+                query = query.Where(c => c.TypeName == propTypeCB.Text);
             }
 
             var result = query.ToList();
 
             dataList.ItemsSource = result;
 
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            propNameInput.Clear();
+            addressInput.Clear();
+            propTypeCB.SelectedValue = null;
         }
     }
 }

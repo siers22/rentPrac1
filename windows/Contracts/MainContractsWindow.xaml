@@ -5,11 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rentPrac1.windows.Contracts"
         mc:Ignorable="d"
-        Title="MainContractsWindow" Height="450" Width="800">
+        Title="MainContractsWindow" Height="550" Width="800">
     <Grid>
-        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,76,0,0" SelectionChanged="dataList_SelectionChanged" MouseEnter="dataList_MouseEnter" AutoGeneratingColumn="OnAutoGeneratingColumn"/>
+        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,168,0,0" SelectionChanged="dataList_SelectionChanged" AutoGeneratingColumn="OnAutoGeneratingColumn"/>
         <Button Content="Добавить контракт" HorizontalAlignment="Left" Margin="24,27,0,0" VerticalAlignment="Top" Width="131" Click="Button_Click"/>
         <Button Content="Выход" HorizontalAlignment="Left" Margin="698,32,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Label Content="Имя клиента" HorizontalAlignment="Left" Margin="24,66,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="clientNameInput" HorizontalAlignment="Left" Margin="188,70,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Название недвижимости" HorizontalAlignment="Left" Margin="24,97,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="propertyNameInput" HorizontalAlignment="Left" Margin="188,101,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Поиск" HorizontalAlignment="Left" Margin="362,73,0,0" VerticalAlignment="Top" Width="94" Click="Button_Click_2"/>
 
     </Grid>
 </Window>
