@@ -5,13 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rentPrac1.windows.Clients"
         mc:Ignorable="d"
-        Title="MainClientsWindow" Height="450" Width="800" MouseEnter="Window_MouseEnter">
+        Title="MainClientsWindow" Height="500" Width="900" MouseEnter="Window_MouseEnter">
     <Grid>
-        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,90,0,0" SelectionChanged="dataList_SelectionChanged" AutoGeneratingColumn="OnAutoGeneratingColumn"/>
-        <Button Content="Выход" HorizontalAlignment="Left" Margin="631,33,0,0" VerticalAlignment="Top" Width="135" Click="Button_Click"/>
-        <Button Content="Добавить клиента" HorizontalAlignment="Left" Margin="22,33,0,0" VerticalAlignment="Top" Width="121" Click="Button_Click_1"/>
-        <Label Content="Имя:" HorizontalAlignment="Left" Margin="178,33,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="nameinput" HorizontalAlignment="Left" Margin="219,37,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="nameinput_PreviewTextInput"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FFBF3A3A" Offset="0.218"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,90,0,0" SelectionChanged="dataList_SelectionChanged" AutoGeneratingColumn="OnAutoGeneratingColumn" Background="#FFBF3A3A" FontSize="20"/>
+        <Button Content="Выход" HorizontalAlignment="Left" Margin="747,36,0,0" VerticalAlignment="Top" Width="135" Click="Button_Click" Background="#FFE89494" FontSize="20" Foreground="#FFCEFF00"/>
+        <Button Content="Добавить клиента" HorizontalAlignment="Left" Margin="20,36,0,0" VerticalAlignment="Top" Width="202" Click="Button_Click_1" Background="#FFE89494" FontSize="20" Foreground="#FFCEFF00"/>
+        <Label Content="Имя:" HorizontalAlignment="Left" Margin="260,34,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FFCEFF00"/>
+        <TextBox x:Name="nameinput" HorizontalAlignment="Left" Margin="330,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="nameinput_PreviewTextInput" Background="#FFE89494" FontSize="20"/>
 
     </Grid>
 </Window>

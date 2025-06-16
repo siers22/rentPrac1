@@ -7,9 +7,15 @@
         mc:Ignorable="d"
         Title="AddClient" Height="200" Width="350" KeyDown="Window_KeyDown">
     <Grid>
-        <Button Content="Отмена" HorizontalAlignment="Left" Margin="76,105,0,0" VerticalAlignment="Top" Width="176" Click="Button_Click"/>
-        <Label Content="Имя" HorizontalAlignment="Left" Margin="22,27,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="nameInput" HorizontalAlignment="Left" Margin="76,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="205" KeyDown="nameInput_KeyDown"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FFBF3A3A" Offset="0.871"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="Отмена" HorizontalAlignment="Left" Margin="90,103,0,0" VerticalAlignment="Top" Width="176" Click="Button_Click" Foreground="#FFCEFF00" Background="#FFE89494" FontSize="20"/>
+        <Label Content="Имя" HorizontalAlignment="Left" Margin="21,31,0,0" VerticalAlignment="Top" FontSize="24" FontFamily="Consolas" Foreground="#FFCEFF00"/>
+        <TextBox x:Name="nameInput" HorizontalAlignment="Left" Margin="76,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="205" KeyDown="nameInput_KeyDown" Background="#FFE89494" FontSize="20"/>
 
     </Grid>
 </Window>

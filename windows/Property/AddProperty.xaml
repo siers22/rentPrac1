@@ -7,16 +7,29 @@
         mc:Ignorable="d"
         Title="AddProperty" Height="450" Width="800" KeyDown="Window_KeyDown">
     <Grid>
-        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="22,244,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_1"/>
-        <Button Content="Отмена" HorizontalAlignment="Left" Margin="201,244,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
-        <Label Content="Имя" HorizontalAlignment="Left" Margin="22,27,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="nameInput" HorizontalAlignment="Left" Margin="169,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
-        <Label Content="Адрес" HorizontalAlignment="Left" Margin="18,74,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="addresInput" HorizontalAlignment="Left" Margin="169,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
-        <Label Content="Цена за месяц" HorizontalAlignment="Left" Margin="18,128,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="priceInput" HorizontalAlignment="Left" Margin="169,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204" PreviewTextInput="priceInput_PreviewTextInput"/>
-        <ComboBox x:Name="typesInput" HorizontalAlignment="Left" Margin="169,186,0,0" VerticalAlignment="Top" Width="204" SelectedValuePath="Id" DisplayMemberPath="Name"/>
-        <Label Content="Тип недвижимости" HorizontalAlignment="Left" Margin="18,181,0,0" VerticalAlignment="Top" FontSize="15"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FFBF3A3A" Offset="0.463"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="22,244,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_1" Foreground="#FFCEFF00" Background="#FFE89494" FontSize="20"/>
+        <Button Content="Отмена" HorizontalAlignment="Left" Margin="201,244,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click" Foreground="#FFCEFF00" Background="#FFE89494" FontSize="20"/>
+        <Label Content="Имя" HorizontalAlignment="Left" Margin="23,34,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FFCEFF00"/>
+        <TextBox x:Name="nameInput" HorizontalAlignment="Left" Margin="204,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204" FontSize="20" Background="#FFE89494"/>
+        <Label Content="Адрес" HorizontalAlignment="Left" Margin="18,80,0,0" VerticalAlignment="Top" FontSize="24" Foreground="#FFCEFF00"/>
+        <TextBox x:Name="addresInput" HorizontalAlignment="Left" Margin="204,87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204" FontSize="20" Background="#FFE89494"/>
+        <Label Content="Цена за месяц" HorizontalAlignment="Left" Margin="18,132,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FFCEFF00"/>
+        <TextBox x:Name="priceInput" HorizontalAlignment="Left" Margin="204,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204" PreviewTextInput="priceInput_PreviewTextInput" FontSize="20" Background="#FFE89494"/>
+        <ComboBox x:Name="typesInput" HorizontalAlignment="Left" Margin="204,184,0,0" VerticalAlignment="Top" Width="204" SelectedValuePath="Id" DisplayMemberPath="Name" FontSize="20">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FFE89494" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <Label Content="Тип недвижимости" HorizontalAlignment="Left" Margin="18,180,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FFCEFF00"/>
 
     </Grid>
 </Window>

@@ -5,11 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rentPrac1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="500">
+        Title="MainWindow" Height="400" Width="500" Background="#7FFFFFFF" >
     <Grid>
-        <Button Content="Управление клиентами" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" Width="310" Height="60" Click="Button_Click"/>
-        <Button Content="Управление недвижимостью" HorizontalAlignment="Center" VerticalAlignment="Top" Width="310" Height="60" Margin="0,150,0,0" Click="Button_Click_1"/>
-        <Button Content="Управление контрактами" HorizontalAlignment="Center" Margin="0,268,0,0" VerticalAlignment="Top" Width="310" Height="60" Click="Button_Click_2"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFC83535" Offset="0.633"/>
+                <GradientStop Color="#19BF3F3F" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="Управление клиентами" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" Width="310" Height="60" Click="Button_Click" Background="#FFE89494" FontSize="20" FontFamily="Yu Gothic UI" Foreground="#FFCEFF00"/>
+        <Button Content="Управление недвижимостью" HorizontalAlignment="Center" VerticalAlignment="Top" Width="310" Height="60" Margin="0,150,0,0" Click="Button_Click_1" Background="#FFE89494" FontFamily="Yu Gothic UI" FontSize="20" Foreground="#FFCEFF00"/>
+        <Button Content="Управление контрактами" HorizontalAlignment="Center" Margin="0,268,0,0" VerticalAlignment="Top" Width="310" Height="60" Click="Button_Click_2" Background="#FFE89494" FontFamily="Yu Gothic UI" FontSize="20" Foreground="#FFCEFF00"/>
 
     </Grid>
 </Window>

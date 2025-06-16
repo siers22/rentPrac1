@@ -7,18 +7,38 @@
         mc:Ignorable="d"
         Title="EditContractWindow" Height="450" Width="800" KeyDown="Window_KeyDown">
     <Grid>
-        <Label Content="Client ID" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FFBF3A3A" Offset="0.527"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="Client ID" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFCEFF00"/>
 
-        <Label Content="PropertyID" HorizontalAlignment="Left" Margin="19,74,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <Label Content="PropertyID" HorizontalAlignment="Left" Margin="19,74,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFCEFF00"/>
 
-        <Label Content="RentTime" HorizontalAlignment="Left" Margin="30,118,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <TextBox x:Name="renttimeinput" HorizontalAlignment="Left" Margin="157,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="renttimeinput_PreviewTextInput"/>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="30,257,0,0" VerticalAlignment="Top" Height="34" Width="169" Click="Button_Click_1"/>
-        <Button Content="Отмена" HorizontalAlignment="Left" Margin="400,257,0,0" VerticalAlignment="Top" Height="34" Width="169" Click="Button_Click"/>
-        <ComboBox x:Name="clientCB" HorizontalAlignment="Left" Margin="157,43,0,0" VerticalAlignment="Top" Width="120" SelectedValuePath="Id" DisplayMemberPath="Name"/>
-        <ComboBox x:Name="propCB" HorizontalAlignment="Left" Margin="157,83,0,0" VerticalAlignment="Top" Width="120" SelectedValuePath="Id" DisplayMemberPath="Name"/>
-        <Label Content="Месяцы аренды" HorizontalAlignment="Left" Margin="302,125,0,0" VerticalAlignment="Top"/>
-        <Button Content="Удалить" HorizontalAlignment="Left" Margin="218,257,0,0" VerticalAlignment="Top" Height="34" Width="168" Click="Button_Click_2"/>
+        <Label Content="RentTime" HorizontalAlignment="Left" Margin="30,118,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFCEFF00"/>
+        <TextBox x:Name="renttimeinput" HorizontalAlignment="Left" Margin="157,124,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="renttimeinput_PreviewTextInput" Background="#FFE89494" FontSize="20" Height="33"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="30,257,0,0" VerticalAlignment="Top" Height="34" Width="169" Click="Button_Click_1" Foreground="#FFCEFF00" Background="#FFE89494" FontSize="20"/>
+        <Button Content="Отмена" HorizontalAlignment="Left" Margin="400,257,0,0" VerticalAlignment="Top" Height="34" Width="169" Click="Button_Click" Foreground="#FFCEFF00" FontSize="20" Background="#FFE89494"/>
+        <ComboBox x:Name="clientCB" HorizontalAlignment="Left" Margin="157,37,0,0" VerticalAlignment="Top" Width="120" SelectedValuePath="Id" DisplayMemberPath="Name" FontSize="20">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FFE89494" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <ComboBox x:Name="propCB" HorizontalAlignment="Left" Margin="157,81,0,0" VerticalAlignment="Top" Width="120" SelectedValuePath="Id" DisplayMemberPath="Name" FontSize="20">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FFE89494" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <Label Content="Месяцы аренды" HorizontalAlignment="Left" Margin="302,119,0,0" VerticalAlignment="Top" Foreground="#FFCEFF00" FontSize="20"/>
+        <Button Content="Удалить" HorizontalAlignment="Left" Margin="218,257,0,0" VerticalAlignment="Top" Height="34" Width="168" Click="Button_Click_2" Foreground="#FFCEFF00" Background="#FFE89494" FontSize="20"/>
 
     </Grid>
 </Window>

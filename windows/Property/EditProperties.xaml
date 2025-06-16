@@ -7,15 +7,21 @@
         mc:Ignorable="d"
         Title="EditProperties" Height="450" Width="800" KeyDown="Window_KeyDown">
     <Grid>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="35,39,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <TextBox x:Name="nameinput" HorizontalAlignment="Left" Margin="153,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226"/>
-        <Label Content="Address" HorizontalAlignment="Left" Margin="25,93,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <TextBox x:Name="addressInput" HorizontalAlignment="Left" Margin="153,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226"/>
-        <Label Content="Price" HorizontalAlignment="Left" Margin="40,160,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <TextBox x:Name="priceInput" HorizontalAlignment="Left" Margin="153,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226" PreviewTextInput="priceInput_PreviewTextInput"/>
-        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="29,262,0,0" VerticalAlignment="Top" Height="38" Width="173" Click="Button_Click"/>
-        <Button Content="Удалить" HorizontalAlignment="Left" Margin="244,262,0,0" VerticalAlignment="Top" Height="38" Width="173" Click="Button_Click_1"/>
-        <Button Content="Отмена" HorizontalAlignment="Left" Margin="459,262,0,0" VerticalAlignment="Top" Height="38" Width="173" Click="Button_Click_2"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FFBF3A3A" Offset="0.378"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="35,39,0,0" VerticalAlignment="Top" FontSize="22" Background="#00000000" Foreground="#FFCEFF00"/>
+        <TextBox x:Name="nameinput" HorizontalAlignment="Left" Margin="153,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226" Background="#FFE89494" FontSize="20"/>
+        <Label Content="Address" HorizontalAlignment="Left" Margin="25,93,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFCEFF00"/>
+        <TextBox x:Name="addressInput" HorizontalAlignment="Left" Margin="153,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226" Background="#FFE89494" FontSize="20"/>
+        <Label Content="Price" HorizontalAlignment="Left" Margin="40,160,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFCEFF00"/>
+        <TextBox x:Name="priceInput" HorizontalAlignment="Left" Margin="153,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226" PreviewTextInput="priceInput_PreviewTextInput" Background="#FFE89494" FontSize="20"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="29,262,0,0" VerticalAlignment="Top" Height="38" Width="173" Click="Button_Click" Background="#FFE89494" FontSize="20" Foreground="#FFCEFF00"/>
+        <Button Content="Удалить" HorizontalAlignment="Left" Margin="244,262,0,0" VerticalAlignment="Top" Height="38" Width="173" Click="Button_Click_1" Background="#FFE89494" FontSize="20" Foreground="#FFCEFF00"/>
+        <Button Content="Отмена" HorizontalAlignment="Left" Margin="459,262,0,0" VerticalAlignment="Top" Height="38" Width="173" Click="Button_Click_2" Background="#FFE89494" FontSize="20" Foreground="#FFCEFF00"/>
 
     </Grid>
 </Window>

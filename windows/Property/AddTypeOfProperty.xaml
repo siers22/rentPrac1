@@ -7,9 +7,15 @@
         mc:Ignorable="d"
         Title="AddTypeOfProperty" Height="250" Width="370" KeyDown="Window_KeyDown">
     <Grid>
-        <Button Content="Отмена" HorizontalAlignment="Left" Margin="47,0,0,0" VerticalAlignment="Center" Width="234" Click="Button_Click"/>
-        <Label Content="Имя" HorizontalAlignment="Left" Margin="22,27,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="nameInput" HorizontalAlignment="Left" Margin="76,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="205" KeyDown="nameInput_KeyDown"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FFBF3A3A" Offset="0.718"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="Отмена" HorizontalAlignment="Left" Margin="47,0,0,0" VerticalAlignment="Center" Width="234" Click="Button_Click" Foreground="#FFCEFF00" FontSize="20" Background="#FFE89494"/>
+        <Label Content="Имя" HorizontalAlignment="Left" Margin="22,27,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FFCEFF00"/>
+        <TextBox x:Name="nameInput" HorizontalAlignment="Left" Margin="76,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="205" KeyDown="nameInput_KeyDown" Background="#FFE89494" Foreground="#FFCEFF00"/>
 
     </Grid>
 </Window>

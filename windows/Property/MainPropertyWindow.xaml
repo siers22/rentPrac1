@@ -5,20 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rentPrac1.windows.Property"
         mc:Ignorable="d"
-        Title="MainPropertyWindow" Height="550" Width="800" MouseEnter="Window_MouseEnter">
+        Title="MainPropertyWindow" Height="600" Width="900" MouseEnter="Window_MouseEnter">
     <Grid>
-        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,184,0,10" SelectionChanged="dataList_SelectionChanged" AutoGeneratingColumn="OnAutoGeneratingColumn"/>
-        <Button Content="Добавить недвижимость" HorizontalAlignment="Left" Margin="20,37,0,0" VerticalAlignment="Top" Width="157" Click="Button_Click"/>
-        <Button Content="Выход" HorizontalAlignment="Left" Margin="649,35,0,0" VerticalAlignment="Top" Width="95" Click="Button_Click_1"/>
-        <Button Content="Типы недвижимости" HorizontalAlignment="Left" Margin="193,36,0,0" VerticalAlignment="Top" Width="147" Click="Button_Click_2"/>
-        <TextBox x:Name="propNameInput" HorizontalAlignment="Left" Margin="183,88,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Название недвижимости" HorizontalAlignment="Left" Margin="20,80,0,0" VerticalAlignment="Top"/>
-        <Label Content="Тип недвижимости" HorizontalAlignment="Left" Margin="20,111,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="propTypeCB" HorizontalAlignment="Left" Margin="183,115,0,0" VerticalAlignment="Top" Width="120" SelectedValuePath="Id" DisplayMemberPath="Name"/>
-        <Label Content="Адрес" HorizontalAlignment="Left" Margin="362,84,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="addressInput" HorizontalAlignment="Left" Margin="437,88,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="searchButton" Content="Поиск" HorizontalAlignment="Left" Margin="360,117,0,0" VerticalAlignment="Top" Click="searchButton_Click"/>
-        <Button Content="Очистить поля" HorizontalAlignment="Left" Margin="437,117,0,0" VerticalAlignment="Top" Click="Button_Click_3"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FFBF3A3A" Offset="0.408"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,184,0,10" SelectionChanged="dataList_SelectionChanged" AutoGeneratingColumn="OnAutoGeneratingColumn" Background="#FFBF3A3A" FontSize="18"/>
+        <Button Content="Добавить недвижимость" HorizontalAlignment="Left" Margin="29,29,0,0" VerticalAlignment="Top" Width="246" Click="Button_Click" Background="#FFE89494" FontSize="20" Foreground="#FFCEFF00"/>
+        <Button Content="Выход" HorizontalAlignment="Left" Margin="782,29,0,0" VerticalAlignment="Top" Width="95" Click="Button_Click_1" Background="#FFE89494" FontSize="20" Foreground="#FFCEFF00"/>
+        <Button Content="Типы недвижимости" HorizontalAlignment="Left" Margin="364,29,0,0" VerticalAlignment="Top" Width="228" Click="Button_Click_2" Background="#FFE89494" FontSize="20" Foreground="#FFCEFF00"/>
+        <TextBox x:Name="propNameInput" HorizontalAlignment="Left" Margin="330,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="20" Background="#FFE89494"/>
+        <Label Content="Название недвижимости" HorizontalAlignment="Left" Margin="29,88,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FFCEFF00"/>
+        <Label Content="Тип недвижимости" HorizontalAlignment="Left" Margin="56,125,0,0" VerticalAlignment="Top" Background="#FFE89494" FontSize="20" Height="37" Width="192" Foreground="#FFCEFF00"/>
+        <ComboBox x:Name="propTypeCB" HorizontalAlignment="Left" Margin="330,129,0,0" VerticalAlignment="Top" Width="120" SelectedValuePath="Id" DisplayMemberPath="Name" FontSize="20" Height="29">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FFE89494" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <Label Content="Адрес" HorizontalAlignment="Left" Margin="513,79,0,0" VerticalAlignment="Top" FontSize="20" Height="39" Foreground="#FFCEFF00"/>
+        <TextBox x:Name="addressInput" HorizontalAlignment="Left" Margin="594,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="139" FontSize="20" Background="#FFE89494" Foreground="#FFCEFF00"/>
+        <Button x:Name="searchButton" Content="Поиск" HorizontalAlignment="Left" Margin="518,127,0,0" VerticalAlignment="Top" Click="searchButton_Click" Background="#FFE89494" FontSize="20" Foreground="#FFCEFF00"/>
+        <Button Content="Очистить поля" HorizontalAlignment="Left" Margin="594,127,0,0" VerticalAlignment="Top" Click="Button_Click_3" Background="#FFE89494" FontSize="20" Foreground="#FFCEFF00"/>
 
     </Grid>
 </Window>

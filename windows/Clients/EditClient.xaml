@@ -7,12 +7,18 @@
         mc:Ignorable="d"
         Title="EditClient" Height="350" Width="630" KeyDown="Window_KeyDown">
     <Grid>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="39,42,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="nameinput" HorizontalAlignment="Left" Margin="160,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="384" Height="40"/>
-        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="39,173,0,0" VerticalAlignment="Top" Height="44" Width="156" Click="Button_Click_1"/>
-        <Button Content="Отмена" HorizontalAlignment="Left" Margin="429,173,0,0" VerticalAlignment="Top" Height="44" Width="133" Click="Button_Click"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FFBF3A3A" Offset="0.861"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="39,42,0,0" VerticalAlignment="Top" FontSize="24" Foreground="#FFCEFF00"/>
+        <TextBox x:Name="nameinput" HorizontalAlignment="Left" Margin="160,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="384" Height="40" Background="#FFE89494" FontSize="20"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="39,173,0,0" VerticalAlignment="Top" Height="44" Width="156" Click="Button_Click_1" Foreground="#FFCEFF00" Background="#FFE89494" FontSize="20"/>
+        <Button Content="Отмена" HorizontalAlignment="Left" Margin="429,173,0,0" VerticalAlignment="Top" Height="44" Width="133" Click="Button_Click" Foreground="#FFCEFF00" Background="#FFE89494" FontSize="20"/>
         <Button Content="Удалить
-" HorizontalAlignment="Center" Margin="0,173,0,0" VerticalAlignment="Top" Width="152" Height="44" Click="Button_Click_2"/>
+" HorizontalAlignment="Center" Margin="0,173,0,0" VerticalAlignment="Top" Width="152" Height="44" Click="Button_Click_2" Foreground="#FFCEFF00" Background="#FFE89494" FontSize="20"/>
 
     </Grid>
 </Window>

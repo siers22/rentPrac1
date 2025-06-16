@@ -7,10 +7,16 @@
         mc:Ignorable="d"
         Title="DeleteClient" Height="250" Width="350">
     <Grid>
-        <Label Content="ID" HorizontalAlignment="Left" Margin="35,43,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="IdInput" HorizontalAlignment="Left" Margin="90,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165"/>
-        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="23,131,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_1"/>
-        <Button Content="Отмена" HorizontalAlignment="Left" Margin="194,131,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FFBF3A3A" Offset="0.891"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="ID" HorizontalAlignment="Left" Margin="35,43,0,0" VerticalAlignment="Top" Foreground="#FFCEFF00" FontSize="20"/>
+        <TextBox x:Name="IdInput" HorizontalAlignment="Left" Margin="97,51,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165" Background="#FFE89494" FontSize="20"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="40,131,0,0" VerticalAlignment="Top" Width="117" Click="Button_Click_1" Foreground="#FFCEFF00" Background="#FFE89494" FontSize="20"/>
+        <Button Content="Отмена" HorizontalAlignment="Left" Margin="205,131,0,0" VerticalAlignment="Top" Width="117" Click="Button_Click" Foreground="#FFCEFF00" Background="#FFE89494" FontSize="20"/>
 
     </Grid>
 </Window>
