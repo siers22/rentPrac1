@@ -133,6 +133,7 @@ namespace rentPrac1.windows.Property
             propNameInput.Clear();
             addressInput.Clear();
             propTypeCB.SelectedValue = null;
+            FillGrid();
         }
     }
 }

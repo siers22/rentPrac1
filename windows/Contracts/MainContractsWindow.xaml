@@ -14,7 +14,8 @@
         <TextBox x:Name="clientNameInput" HorizontalAlignment="Left" Margin="188,70,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label Content="Название недвижимости" HorizontalAlignment="Left" Margin="24,97,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="propertyNameInput" HorizontalAlignment="Left" Margin="188,101,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Поиск" HorizontalAlignment="Left" Margin="362,73,0,0" VerticalAlignment="Top" Width="94" Click="Button_Click_2"/>
+        <Button Content="Поиск" HorizontalAlignment="Left" Margin="362,69,0,0" VerticalAlignment="Top" Width="94" Click="Button_Click_2"/>
+        <Button Content="Очистить" HorizontalAlignment="Left" Margin="362,99,0,0" VerticalAlignment="Top" Width="94" Click="Button_Click_3"/>
 
     </Grid>
 </Window>

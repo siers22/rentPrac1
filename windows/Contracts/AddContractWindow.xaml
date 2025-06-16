@@ -8,15 +8,16 @@
         Title="AddContractWindow" Height="450" Width="800">
     <Grid>
         <Label Content="Client ID" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <TextBox x:Name="clientInput" HorizontalAlignment="Left" Margin="157,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        
         <Label Content="PropertyID" HorizontalAlignment="Left" Margin="19,74,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <TextBox x:Name="propertyinput" HorizontalAlignment="Left" Margin="157,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        
         <Label Content="RentTime" HorizontalAlignment="Left" Margin="30,118,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <TextBox x:Name="renttimeinput" HorizontalAlignment="Left" Margin="157,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <DatePicker x:Name="rentEndPicker" HorizontalAlignment="Left" Margin="167,170,0,0" VerticalAlignment="Top"/>
-        <Label Content="RentEndTime" HorizontalAlignment="Left" Margin="19,162,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="renttimeinput" HorizontalAlignment="Left" Margin="157,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="renttimeinput_PreviewTextInput"/>
         <Button Content="Добавить" HorizontalAlignment="Left" Margin="30,257,0,0" VerticalAlignment="Top" Height="34" Width="169" Click="Button_Click_1"/>
         <Button Content="Отмена" HorizontalAlignment="Left" Margin="217,257,0,0" VerticalAlignment="Top" Height="34" Width="169" Click="Button_Click"/>
+        <ComboBox x:Name="clientCB" HorizontalAlignment="Left" Margin="157,43,0,0" VerticalAlignment="Top" Width="120" SelectedValuePath="Id" DisplayMemberPath="Name"/>
+        <ComboBox x:Name="propCB" HorizontalAlignment="Left" Margin="157,83,0,0" VerticalAlignment="Top" Width="120" SelectedValuePath="Id" DisplayMemberPath="Name"/>
+        <Label Content="Месяцы аренды" HorizontalAlignment="Left" Margin="302,125,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>

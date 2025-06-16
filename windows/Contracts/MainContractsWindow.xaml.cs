@@ -49,12 +49,19 @@ namespace rentPrac1.windows.Contracts
         private void dataList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            var contract = dataList.SelectedItem as Models.Contract;
+            var contract = dataList.SelectedItem as Models.ContractDto;
             if (contract != null)
             {
-                var window2 = new EditContractWindow(context, contract);
-                window2.Show();
+                var contract1 = context.Contracts
+                    .Where(c => c.Id == contract.Id)
+                    .FirstOrDefault();
+                if (contract1 != null)
+                {
+                    var window2 = new EditContractWindow(context, contract1);
+                    window2.Show();
+                }
             }
+  
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -99,6 +106,13 @@ namespace rentPrac1.windows.Contracts
             var result = query.ToList();
 
             dataList.ItemsSource = result;
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            clientNameInput.Clear();
+            propertyNameInput.Clear();
+            FillGrid();
         }
     }
 }

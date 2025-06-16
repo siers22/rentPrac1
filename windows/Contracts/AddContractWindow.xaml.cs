@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using rentPrac1.DataAccess;
 using rentPrac1.Models;
@@ -27,8 +29,14 @@ namespace rentPrac1.windows.Contracts
         public AddContractWindow()
         {
             InitializeComponent();
+            FillCombobox();
         }
-
+        public async void FillCombobox()
+        {
+            clientCB.ItemsSource = await context.Clients.AsNoTracking().ToListAsync();
+            propCB.ItemsSource = await context.Properties.AsNoTracking().ToListAsync();
+        }
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -36,14 +44,24 @@ namespace rentPrac1.windows.Contracts
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var newCotract = new Models.Contract { ClientId = Convert.ToInt32(clientInput.Text),
-                PropertyId = Convert.ToInt32(propertyinput.Text),
-                ContractStartDate = DateTime.Now.ToString().Replace("0:00:00", ""),
-                ContractEndDate = Convert.ToString(rentEndPicker.SelectedDate).Replace("0:00:00", ""),
-                RentTime = Convert.ToInt32(renttimeinput.Text) };
+            System.DateTime today = System.DateTime.Now;
+            System.TimeSpan duration = new System.TimeSpan();
+            System.DateTime answer = today.Add(duration);
+            System.Console.WriteLine("{0:dddd}", answer);
+            var newCotract = new Models.Contract { ClientId = (int)clientCB.SelectedValue,
+                PropertyId = (int)propCB.SelectedValue,
+                ContractStartDate = DateTime.Now.ToString().Remove(11), 
+                ContractEndDate = DateTime.Now.AddMonths(Convert.ToInt32(renttimeinput.Text)).ToString().Remove(11),
+                RentTime = Convert.ToInt32(renttimeinput.Text)};
             context.Add(newCotract);
             context.SaveChanges();
             this.Close();
+        }
+
+        private void renttimeinput_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            var textBox = sender as TextBox;
+            e.Handled = Regex.IsMatch(e.Text, "[^0-9]+");
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
 using rentPrac1.DataAccess;
 
 namespace rentPrac1.windows.Contracts
@@ -24,24 +26,31 @@ namespace rentPrac1.windows.Contracts
         private readonly AppDbContext context;
         private readonly Models.Contract contract;
 
+
+        public async void FillCombobox()
+        {
+            clientCB.ItemsSource = await context.Clients.AsNoTracking().ToListAsync();
+            propCB.ItemsSource = await context.Properties.AsNoTracking().ToListAsync();
+        }
         public EditContractWindow(AppDbContext context, Models.Contract contract)
         {
             InitializeComponent();
+            FillCombobox();
             this.context = context;
             this.contract = contract;
-            clientInput.Text = Convert.ToString(contract.ClientId);
-            propertyinput.Text = Convert.ToString(contract.PropertyId);
+            clientCB.SelectedValue = contract.Client;
+            propCB.SelectedValue = contract.Property;
             renttimeinput.Text = Convert.ToString(contract.ClientId);
 
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            contract.ClientId = Convert.ToInt32(clientInput.Text);
-            contract.PropertyId = Convert.ToInt32(propertyinput.Text);
-            contract.RentTime = Convert.ToInt32(renttimeinput.Text);
-            context.SaveChanges();
-            this.Close();
+            //contract.ClientId = Convert.ToInt32(clientInput.Text);
+            //contract.PropertyId = Convert.ToInt32(propertyinput.Text);
+            //contract.RentTime = Convert.ToInt32(renttimeinput.Text);
+            //context.SaveChanges();
+            //this.Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -66,6 +75,12 @@ namespace rentPrac1.windows.Contracts
             {
                 this.Close();
             }
+        }
+
+        private void renttimeinput_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            var textBox = sender as TextBox;
+            e.Handled = Regex.IsMatch(e.Text, "[^0-9]+");
         }
     }
 }
