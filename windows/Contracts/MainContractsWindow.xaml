@@ -13,7 +13,7 @@
                 <GradientStop Color="#FFBF3A3A" Offset="0.316"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,168,0,0" SelectionChanged="dataList_SelectionChanged" AutoGeneratingColumn="OnAutoGeneratingColumn" Background="#FFBF3A3A" FontSize="20"/>
+        <DataGrid x:Name="dataList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,168,0,0" SelectionChanged="dataList_SelectionChanged" AutoGeneratingColumn="OnAutoGeneratingColumn" Background="#FFBF3A3A" FontSize="20" OpacityMask="#FFE80606"/>
         <Button Content="Добавить контракт" HorizontalAlignment="Left" Margin="24,27,0,0" VerticalAlignment="Top" Width="240" Click="Button_Click" Background="#FFE89494" Foreground="#FFCEFF00" FontSize="20"/>
         <Button Content="Выход" HorizontalAlignment="Left" Margin="811,27,0,0" VerticalAlignment="Top" Click="Button_Click_1" Background="#FFE89494" Foreground="#FFCEFF00" FontSize="20" Width="70"/>
         <Label Content="Имя клиента" HorizontalAlignment="Left" Margin="137,72,0,0" VerticalAlignment="Top" Foreground="#FFCEFF00" FontSize="20"/>

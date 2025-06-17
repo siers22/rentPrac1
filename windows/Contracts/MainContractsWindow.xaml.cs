@@ -70,6 +70,8 @@ namespace rentPrac1.windows.Contracts
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            var window10 = new MainWindow();
+            window10.Show();
             this.Close();
         }
 

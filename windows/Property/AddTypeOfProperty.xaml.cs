@@ -44,10 +44,15 @@ namespace rentPrac1.windows.Property
 
         private void nameInput_KeyDown(object sender, KeyEventArgs e)
         {
-            var newtype = new PropertyType { Name = nameInput.Text };
-            context.PropertyTypes.Add(newtype);
-            context.SaveChanges();
-            this.Close();
+
+            if(e.Key == Key.Enter)
+            {
+                var newtype = new PropertyType { Name = nameInput.Text };
+                context.PropertyTypes.Add(newtype);
+                context.SaveChanges();
+                this.Close();
+
+            }
 
         }
     }
